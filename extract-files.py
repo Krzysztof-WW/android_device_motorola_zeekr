@@ -98,6 +98,10 @@ blob_fixups: blob_fixups_user_type = {
     ),
 }
 
+extract_fns: extract_fns_user_type = {
+    star_firmware_regex: extract_star_firmware,
+}
+
 module = ExtractUtilsModule(
     'zeekr',
     'motorola',
@@ -105,6 +109,8 @@ module = ExtractUtilsModule(
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
     add_generated_carriersettings=True,
+    add_firmware_proprietary_file=True,
+    extract_fns=extract_fns,
 )
 
 if __name__ == '__main__':
