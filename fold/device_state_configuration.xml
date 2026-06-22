@@ -2,9 +2,10 @@
   <device-state>
     <identifier>0</identifier>
     <name>CLOSED</name>
-    <flags>
-      <flag>FLAG_CANCEL_OVERRIDE_REQUESTS</flag>
-    </flags>
+    <properties>
+      <property>com.android.server.policy.PROPERTY_POWER_CONFIGURATION_TRIGGER_SLEEP</property>
+      <property>com.android.server.policy.PROPERTY_POLICY_CANCEL_OVERRIDE_REQUESTS</property>
+    </properties>
     <conditions>
       <sensor>
         <type>com.motorola.sensor.hall</type>
@@ -27,6 +28,9 @@
   <device-state>
     <identifier>1</identifier>
     <name>HALF_OPENED</name>
+    <properties>
+      <property>com.android.server.policy.PROPERTY_POWER_CONFIGURATION_TRIGGER_WAKE</property>
+    </properties>
     <conditions>
       <sensor>
         <type>android.sensor.hinge_angle</type>
@@ -46,8 +50,8 @@
   <device-state>
     <identifier>3</identifier>
     <name>REAR_DISPLAY_STATE</name>
-    <flags>
-      <flag>FLAG_EMULATED_ONLY</flag>
-    </flags>
+    <properties>
+      <property>com.android.server.policy.PROPERTY_EMULATED_ONLY</property>
+    </properties>
   </device-state>
 </device-state-config>
