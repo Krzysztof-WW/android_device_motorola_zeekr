@@ -22,32 +22,17 @@ include device/motorola/sm8475-common/BoardConfigCommon.mk
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := zeekr
 
-# HIDL
-DEVICE_MANIFEST_CAPE_FILES += $(DEVICE_PATH)/manifests/manifest_zeekr.xml
-ODM_MANIFEST_SKUS += dnp dn nep ne np n
-ODM_MANIFEST_DNP_FILES := $(DEVICE_PATH)/manifests/manifest_dn.xml
-ODM_MANIFEST_DN_FILES  := $(DEVICE_PATH)/manifests/manifest_dn.xml
-ODM_MANIFEST_NEP_FILES := $(DEVICE_PATH)/manifests/manifest_ne.xml $(COMMON_PATH)/manifest_cape_ss.xml
-ODM_MANIFEST_NE_FILES  := $(DEVICE_PATH)/manifests/manifest_ne.xml $(COMMON_PATH)/manifest_cape_ss.xml
-ODM_MANIFEST_NP_FILES  := $(DEVICE_PATH)/manifests/manifest_n.xml $(COMMON_PATH)/manifest_cape_ss.xml
-ODM_MANIFEST_N_FILES   := $(DEVICE_PATH)/manifests/manifest_n.xml $(COMMON_PATH)/manifest_cape_ss.xml
-
 # Kernel
 TARGET_KERNEL_CONFIG += \
 	vendor/ext_config/moto-waipio-zeekr.config
 
 # Partitions
-ifneq ($(WITH_GMS),true)
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 3318226944
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 873680896
-BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 916299776
-endif
 BOARD_MOT_DP_GROUP_SIZE := 9483321344 # ( BOARD_SUPER_PARTITION_SIZE - 4MB )
 BOARD_SUPER_PARTITION_SIZE := 9487515648
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery
@@ -55,10 +40,7 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 
 # Security
 BOOT_SECURITY_PATCH := 2025-10-01
-VENDOR_SECURITY_PATCH := 2025-10-01
-
-# SELinux
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Verified Boot
 BOARD_AVB_ROLLBACK_INDEX := 26

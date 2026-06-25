@@ -15,18 +15,13 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 
 # Inherit from zeekr device
 $(call inherit-product, device/motorola/zeekr/device.mk)
-
-# Inherit from Gapps
-ifeq ($(WITH_GMS),true)
-$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
-endif
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
@@ -40,6 +35,5 @@ PRODUCT_MODEL := motorola razr 40 ultra
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DeviceProduct=zeekr_g
-
-BUILD_FINGERPRINT := motorola/zeekr_g/msi:15/V1TZS35M.41-21-3-6/1672c2:user/release-keys
+    DeviceProduct="zeekr_g" \
+		BuildFingerprint="motorola/zeekr_g/msi:15/V1TZS35M.41-21-3-6/1672c2:user/release-keys"
