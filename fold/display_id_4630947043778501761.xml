@@ -16,20 +16,8 @@
 -->
 
 <displayConfiguration>
-    <name>Outer Display</name>
-
-    <quirks>
-        <quirk>canSetBrightnessViaHwc</quirk>
-    </quirks>
+    <name>Inner Display</name>
 
     <autoBrightness enabled="true">
     </autoBrightness>
-
-    <densityMapping>
-        <density>
-            <width>1056</width>
-            <height>1068</height>
-            <density>360</density>
-	</density>
-    </densityMapping>
 </displayConfiguration>

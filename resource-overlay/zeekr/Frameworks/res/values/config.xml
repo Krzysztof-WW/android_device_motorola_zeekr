@@ -297,13 +297,13 @@
     </array>
 
     <array name="config_sfps_sensor_props_0" translatable="false">
-        <item>"local:4630947043778501762"</item> <!--item>displayId</item-->
+        <item>"local:4630947043778501761"</item> <!--item>displayId</item-->
         <item>1080</item> <!--item>sensorLocationX</item-->
         <item>850</item> <!--item>sensorLocationY</item-->
         <item>110</item> <!--item>sensorRadius</item-->
     </array>
     <array name="config_sfps_sensor_props_1" translatable="false">
-        <item>"local:4630947043778501763"</item> <!--item>displayId</item-->
+        <item>"local:4630947043778501762"</item> <!--item>displayId</item-->
         <item>1056</item> <!--item>sensorLocationX</item-->
         <item>20</item> <!--item>sensorLocationY</item-->
         <item>110</item> <!--item>sensorRadius</item-->
@@ -326,8 +326,8 @@
     <bool name="config_supportsConcurrentInternalDisplays">false</bool>
 
     <string-array name="config_displayUniqueIdArray" translatable="false">
+        <item>"local:4630947043778501761"</item>
         <item>"local:4630947043778501762"</item>
-        <item>"local:4630947043778501763"</item>
     </string-array>
 
     <!-- WindowsManager JetPack display features -->
