@@ -36,4 +36,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct="zeekr_g" \
-		BuildFingerprint="motorola/zeekr_g/msi:15/V1TZS35M.41-21-3-6/1672c2:user/release-keys"
+		BuildFingerprint="motorola/zeekr_g/msi:15/V1TZS35H.41-21-3-11/516907-41be73:user/release-keys"
