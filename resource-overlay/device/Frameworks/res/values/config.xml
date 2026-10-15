@@ -324,6 +324,12 @@
     <string name="config_secondaryBuiltInDisplayCutout" translatable="false">M 483,930 a 45,45 0 0 1 90,0 a 45,45 0 0 1 -90,0 M 596,920 a 106,106 0 0 1 212,0 a 106,106 0 0 1 -212,0 M 812,920 a 106,106 0 0 1 212,0 a 106,106 0 0 1 -212,0 Z @left</string>
     <string name="config_secondaryBuiltInDisplayCutoutRectApproximation" translatable="false">M 480,800 L 1056,800 L 1056,1068 L 480,1068 Z @left</string>
     <bool name="config_maskSecondaryBuiltInDisplayCutout">true</bool>
+    <integer-array name="config_secondaryBuiltInDisplayCutoutSideOverride">
+        <item>3</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
 
     <array name="config_sfps_sensor_props_0">
         <item>"local:4630947043778501761"</item> <!--item>displayId</item-->
@@ -360,6 +366,11 @@
         <item>"local:4630947043778501762"</item>
     </string-array>
 
+    <!-- List of the labels of requestable device state config values -->
+    <string-array name="config_deviceStatesAvailableForAppRequests">
+        <item>config_deviceStateRearDisplay</item>
+    </string-array>
+
     <!-- WindowsManager JetPack display features -->
     <string name="config_display_features" translatable="false">fold-[0,1320,1080,1320]</string>
 
@@ -370,6 +381,8 @@
         <item>1:2</item>
         <item>2:3</item>
         <item>3:1</item>
+        <item>4:1000</item>
+        <item>5:1</item>
     </array>
 
     <!-- The device states (supplied by DeviceStateManager) that should be treated as open by the
@@ -407,6 +420,7 @@
      state. Default is empty. -->
     <integer-array name="config_rearDisplayDeviceStates">
         <item>3</item>
+        <item>5</item>
     </integer-array>
 
     <!-- Device state that corresponds to rear display mode, feature provided
@@ -414,6 +428,11 @@
          TODO(b/236022708) Move rear display state to device state config file
     -->
     <integer name="config_deviceStateRearDisplay">3</integer>
+    	
+    <!-- Physical display address that corresponds to the rear display in rear display mode
+         and concurrent display mode. Used to get information about the display before
+         entering the corresponding modes -->
+    <string name="config_rearDisplayPhysicalAddress" translatable="false">4630947043778501762</string>
 
     <!-- Whether to show Fold lock behavior setting feature in Settings App -->
     <bool name="config_fold_lock_behavior">true</bool>
